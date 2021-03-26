@@ -74,10 +74,11 @@ div {
   border-radius: 10px;
 }
 
-.jó {
-  background-color: green;
-}
 
 .rossz {
   background-color: red;
+}
+
+.jo {
+    background-color: green;
 }
