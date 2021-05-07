@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Hajósteszt</title>
     <link href="hajo.css" rel="stylesheet" />
-    <script src="hetedik.js"></script>
+    <script src="tizedik.js"></script>
 
 </head>
 <body>
@@ -16,9 +16,9 @@
 
     <div id="középső">
       <div id="válaszok">
-        <div onclick="eredmeny()" id="valasz1" class="kerdes kattintható">Igen</div>
-        <div onclick="eredmeny()" id="valasz2" class="kerdes kattintható">Nem</div>
-        <div onclick="eredmeny()" id="valasz3" class="kerdes kattintható">Attól függ</div>
+        <div id="valasz1" onclick="valasztas(1)" class="kerdes kattintható">Igen</div>
+        <div id="valasz2" onclick="valasztas(2)" class="kerdes kattintható">Nem</div>
+        <div id="valasz3" onclick="valasztas(3)" class="kerdes kattintható">Attól függ</div>
       </div>
       <div id="kep">
           <img id="kep1">
@@ -26,8 +26,8 @@
     </div>
 
     <div id="vezérlő">
-      <div onclick="vissza()" class="gomb kattintható">Vissza</div>
-      <div onclick="elore()" class="gomb kattintható">Előre</div>
+      <div id="vissza_gomb" class="gomb kattintható">Vissza</div>
+      <div id="elore_gomb" class="gomb kattintható">Előre</div>
     </div>
   </div>
 </body>
