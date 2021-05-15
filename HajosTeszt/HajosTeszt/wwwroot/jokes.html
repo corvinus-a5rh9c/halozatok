@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Vicces vicc (vicces)</title>
+</head>
+<body>
+    <form>
+
+        <div>
+            <input id="jokeText" type="text" placeholder="Csak PC vicc" />
+        </div>
+        <button id="addButton">Új vicc felvétele</button>
+        <div id="jokeList"></div>
+    </form>
+    <script>
+        document.getElementById("addButton").addEventListener("click", () => {
+            let data = {
+                jokeText: document.getElementById("jokeText").value
+            }
+
+            fetch("api/jokes",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(x => {
+                    if (x.ok) {
+                        alert("Siker");
+
+                    }
+                    else {
+                        alert("Kudarc");
+                    }
+                });
+
+        });
+
+
+
+
+            window.onload = function () {
+                fetch(`api/jokes`)
+                    .then(response => response.json())
+                    .then(data => listazas(data))
+            }
+
+            function listazas(vicclista) {
+                for (var i = 0; i < vicclista.length; i++) {
+                    //console.log(vicclista[i].jokeText)
+                    if (vicclista[i].jokeText != null && vicclista[i].jokeText.length != 0) {
+ 
+                        let ujVicc = document.createElement("div");
+                        let ujSor = document.createElement("br");
+
+                        ujVicc.innerHTML = vicclista[i].jokeText;
+
+                        document.getElementById("jokeList").appendChild(ujVicc);
+                        document.getElementById("jokeList").appendChild(ujSor);
+
+                    }
+                }
+            }
+
+    </script>
+</body>
+</html>
